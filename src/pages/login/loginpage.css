@@ -1,0 +1,143 @@
+.login-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: #f5f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  display: flex;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(60,60,60,0.15);
+  overflow: hidden;
+  max-width: 1100px;
+  min-height: 600px;
+  width: 95%;
+}
+
+.login-illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  min-width: 300px;
+}
+
+.login-illustration img {
+  width: 95%;
+  max-width: 500px;
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2d4fd7;
+  min-width: 300px;
+}
+
+.login-form {
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-form label {
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.login-options a {
+  color: #ffd600;
+  text-decoration: none;
+}
+
+.login-form button {
+  background: #ffd600;
+  color: #2d4fd7;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.login-form button:hover {
+  background: #ffb300;
+}
+
+.login-error {
+  color: #ff3333;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .login-card {
+    flex-direction: column;
+    min-height: 0;
+    max-width: 95vw;
+  }
+  .login-illustration,
+  .login-form-section {
+    min-width: 0;
+    width: 100%;
+    padding: 30px 0;
+  }
+  .login-illustration img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    border-radius: 0;
+    box-shadow: none;
+    width: 100vw;
+    min-height: 0;
+  }
+  .login-form {
+    max-width: 95vw;
+    padding: 0 10px;
+  }
+  .login-illustration img {
+    max-width: 180px;
+  }
+}
