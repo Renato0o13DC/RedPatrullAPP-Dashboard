@@ -1,3 +1,15 @@
+Credenciales para ingreso a la web
+
+Usuario Administrador: renatox@mpuda.cl password: renatopuda
+
+Usuario Central Camaras : gaorellana@mpuda.cl    password: 123456
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
