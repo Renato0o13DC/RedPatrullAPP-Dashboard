@@ -1,0 +1,163 @@
+/* TurnosConductores.css
+   Estilos para la sección "Gestión de Conductores y Turnos"
+   Coherentes con dashboard.css: fondo claro, cards blancas con borde redondeado (14px) y sombra sutil.
+*/
+
+.turnos-container {
+  background: #f5f6fa; /* igual a dashboard-layout */
+  padding: 10px 34px 34px; /* similar a dashboard-content */
+  min-height: calc(100vh - 80px);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #0c2238;
+}
+
+/* === KPIs === */
+.turnos-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 16px 2px 12px;
+}
+
+.turnos-kpi-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.turnos-kpi-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0a2e5c;
+}
+
+.turnos-kpi-label {
+  font-size: 0.92rem;
+  color: #556070;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .turnos-kpis { grid-template-columns: 1fr; }
+}
+
+/* === Toolbar filtros === */
+.turnos-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: flex-end;
+  margin: 10px 2px 16px;
+}
+
+.turnos-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.turnos-field label {
+  font-size: 0.85rem;
+  color: #516276;
+}
+
+.turnos-field input[type="date"],
+.turnos-field select {
+  background: #fff;
+  border: 1px solid #d8dee8;
+  border-radius: 10px;
+  padding: 8px 10px;
+  min-width: 190px;
+  color: #223246;
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+.turnos-field input[type="date"]:focus,
+.turnos-field select:focus {
+  border-color: #0a2e5c;
+  box-shadow: 0 0 0 3px rgba(10, 46, 92, 0.12);
+}
+
+/* Botón de exportación */
+.turnos-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0a2e5c;
+  color: #fff;
+  border: 1px solid #0a2e5c;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .18s ease, box-shadow .18s ease, transform .06s ease;
+}
+
+.turnos-export-btn:hover {
+  background: #123d74;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.turnos-export-btn:active {
+  transform: translateY(1px);
+}
+
+/* === Card Tabla === */
+.turnos-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  padding: 18px 22px;
+  margin-top: 8px;
+}
+
+.turnos-empty {
+  text-align: center;
+  color: #6b7785;
+}
+
+.turnos-table-wrapper {
+  overflow-x: auto;
+}
+
+.turnos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.turnos-table thead th {
+  background: #f2f5f9;
+  color: #1a2d42;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 0.78rem;
+  border-bottom: 1px solid #eef1f5;
+  padding: 8px 8px;
+  white-space: nowrap;
+}
+
+.turnos-table tbody td {
+  border-bottom: 1px solid #eef1f5;
+  padding: 8px 8px;
+  white-space: nowrap;
+}
+
+.turnos-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Placeholder para gráficos futuros */
+.turnos-placeholder {
+  margin-top: 14px;
+  color: #516276;
+  font-size: 0.95rem;
+}

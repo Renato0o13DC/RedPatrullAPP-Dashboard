@@ -1,0 +1,205 @@
+/* VehiculosMantenimiento.css
+   Estilos para la vista "Vehículos y Mantenimiento" del dashboard BI
+   - Diseño consistente con el dashboard: fondo suave, cards blancas, bordes redondeados, sombras sutiles.
+   - Sin TailwindCSS ni frameworks externos.
+   - Incluye responsividad, barra de progreso con colores dinámicos y animaciones suaves.
+*/
+
+/* ====== Contenedor general ====== */
+.vehm-container {
+  /* Fondo suave del área principal, coherente con el dashboard */
+  background: #f5f6fa; /* igual que .dashboard-layout */
+  padding: 10px 34px 34px; /* similar a .dashboard-content */
+  min-height: calc(100vh - 80px); /* Deja espacio bajo el header superior del dashboard */
+  font-family: "Segoe UI", Roboto, Arial, sans-serif; /* similar al resto del panel */
+  color: #0c2238; /* tono de texto usado en títulos del dashboard */
+}
+
+/* ====== Encabezado ====== */
+.vehm-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 2px 16px;
+}
+
+.vehm-header-icon {
+  color: #0a2e5c; /* azul corporativo */
+  font-size: 22px;
+}
+
+.vehm-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0c2238;
+  margin: 0;
+}
+
+/* ====== Toolbar / buscador ====== */
+.vehm-toolbar {
+  margin: 0 2px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.vehm-search-input {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 12px;
+  border: 1px solid #d8dee8;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #223246;
+  font-size: 0.95rem;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+.vehm-search-input::placeholder { color: #93a1b5; }
+
+.vehm-search-input:focus {
+  border-color: #0a2e5c;
+  box-shadow: 0 0 0 3px rgba(10, 46, 92, 0.12);
+}
+
+/* Botón de exportación */
+.vehm-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0a2e5c; /* azul corporativo */
+  color: #fff;
+  border: 1px solid #0a2e5c;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .18s ease, box-shadow .18s ease, transform .06s ease;
+}
+
+.vehm-export-btn:hover {
+  background: #123d74; /* azul un poco más claro al hover, consistente con sidebar hover */
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.vehm-export-btn:active {
+  transform: translateY(1px);
+}
+
+/* ====== Estados vacíos / carga ====== */
+.vehm-empty {
+  background: #fff;
+  border-radius: 14px; /* coherente con .dashboard-card */
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  padding: 24px;
+  text-align: center;
+  color: #6b7785;
+  margin: 6px 2px;
+}
+
+/* ====== Grilla de tarjetas ====== */
+.vehm-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* En pantallas medianas: 2 columnas */
+@media (min-width: 720px) {
+  .vehm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* En pantallas anchas: 3 columnas */
+@media (min-width: 1080px) {
+  .vehm-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ====== Tarjeta de vehículo ====== */
+.vehm-card {
+  background: #fff;
+  border-radius: 14px; /* igual que .dashboard-card */
+  box-shadow: 0 2px 6px rgba(0,0,0,.08); /* igual que .dashboard-card */
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.vehm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,.12); /* hover sutil, coherente con el estilo */
+}
+
+/* Header de la card: icono + títulos */
+.vehm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vehm-card-emoji {
+  font-size: 22px; /* tamaño agradable para el emoji 🚙 */
+  line-height: 1;
+}
+
+.vehm-card-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.vehm-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0a2e5c;
+}
+
+.vehm-card-subtitle {
+  font-size: 0.9rem;
+  color: #516276;
+}
+
+/* Cuerpo de la card: barra + texto de km */
+.vehm-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ====== Barra de progreso ====== */
+.vehm-progress {
+  width: 100%;
+  height: 10px;
+  background: #eef1f5; /* similar a separadores de tablas del dashboard */
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.vehm-progress-bar {
+  height: 100%;
+  width: 0; /* será controlado por style width:% desde React */
+  border-radius: 999px;
+  transition: width .3s ease-in-out, background-color .2s ease-in-out; /* animación solicitada */
+}
+
+/* Colores dinámicos */
+.vehm-progress-bar.is-green { background: #28a745; }
+.vehm-progress-bar.is-yellow { background: #ffc107; }
+.vehm-progress-bar.is-red { background: #dc3545; }
+
+/* Texto bajo la barra */
+.vehm-km-text {
+  font-size: 0.92rem;
+  color: #223246;
+  font-weight: 600;
+}
+
+/* ====== Ajustes responsivos de tipografía / espaciados ====== */
+@media (max-width: 480px) {
+  .vehm-title { font-size: 1.2rem; }
+  .vehm-card-title { font-size: 1rem; }
+  .vehm-card-subtitle { font-size: 0.85rem; }
+  .vehm-km-text { font-size: 0.88rem; }
+}

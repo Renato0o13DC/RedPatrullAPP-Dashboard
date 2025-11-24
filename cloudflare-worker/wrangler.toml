@@ -1,0 +1,8 @@
+name = "redpatrullapp-interseccion"
+main = "src/worker.js"
+compatibility_date = "2025-11-12"
+
+# Descomenta para asociar a una zona/route personalizada
+# routes = [
+#   { pattern = "api.redpatrullapp.cl/api/interseccion", zone_id = "<your-zone-id>" }
+# ]

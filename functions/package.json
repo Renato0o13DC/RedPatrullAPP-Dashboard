@@ -1,0 +1,11 @@
+{
+  "name": "redpatrullapp-functions",
+  "private": true,
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "firebase-functions": "^3.24.0",
+    "node-fetch": "^2.6.7"
+  }
+}
