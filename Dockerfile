@@ -1,13 +1,13 @@
 # Multi-stage Dockerfile for React (CRA) app served by Nginx
 
 # 1) Build stage
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Install deps only when needed
 COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
 RUN if [ -f package-lock.json ]; then \
-      npm ci; \
+      npm install; \
     elif [ -f yarn.lock ]; then \
       yarn install --frozen-lockfile; \
     elif [ -f pnpm-lock.yaml ]; then \
